@@ -17,12 +17,8 @@ public class StudentMarks{
 
 		for(int i=0;i<noOfSubs;i++)
 			markTotal+=marks[i];
-		System.out.println("\n\nMark		percentage\n");
-		for(int i=0;i<noOfSubs;i++)
-			{
-				percentage = marks[i]/tmark * 100;
-				System.out.println(marks[i]+ "		"+percentage+"\n");		
-			}
-		System.out.println("The student scored a total mark of "+markTotal +" out of "+ tmark*noOfSubs);
+		percentage = markTotal/(tmark*noOfSubs)*100;
+		System.out.println("The student scored a total mark of "+markTotal +" out of "+ tmark*noOfSubs +  " ["+percentage+"%]");
 	}
 }
+

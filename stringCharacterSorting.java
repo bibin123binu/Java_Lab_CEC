@@ -8,6 +8,7 @@ public class stringCharacterSorting{
 		char[] strArray = str.toCharArray(); 
 		Arrays.sort(strArray);
 		System.out.print("\n\nString before being sorted: " + str);
-		System.out.print("\n\nString after being sorted: " + Arrays.toString(strArray)+"\n\n");	
+		String newStr = new String(strArray);
+		System.out.print("\n\nString after being sorted: " + newStr+"\n");	
 	}
 }
