@@ -26,14 +26,11 @@ public class matrix{
   for(j=0;j<column;j++)
     arr2[i][j] = sc.nextInt();
 
- 
-//to add the matrices
 
  for(i=0;i<row;i++)
   for(j=0;j<column;j++)
   res[i][j] = arr1[i][j]+arr2[i][j];
  
-//to print the result;
 
 System.out.println("Sum of the matrices is:\n");
 for(i=0;i<row;i++)
