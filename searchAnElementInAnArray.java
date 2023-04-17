@@ -21,16 +21,11 @@ public class searchAnElementInAnArray{
 			for(int i=0;i<length;i++){
 				if(arr[i] == key){
 					flag = 1;
-					break;
+					System.out.println("Search key " +key+ " is found at "+ i +"");
 				}
 			}
 			
-			if(flag == 1){
-				System.out.println("Search key " +key+ " is found");
-				return;			
-			}		
-			else{
-				System.out.println(key+ " is not found in the array");				
+			if(flag != 1){
+				System.out.println("Search key not found");			
 			}
-		}
 }

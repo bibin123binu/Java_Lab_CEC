@@ -11,7 +11,7 @@ public class employee{
 		{
 			empArray[i] = new EmployeeData();
 		}
-		System.out.println("Enter the employee no you want to search for:");
+		System.out.println("\nEnter the employee no you want to search for:");
 		int searchKey = read.nextInt();
 		searchArray(empArray,searchKey);
 	}
@@ -26,11 +26,11 @@ static void searchArray(EmployeeData arr[], int searchKey){
 			}
 			
 			if(flag == 1){
-				System.out.println("Employee with ID: " +searchKey+ " is found\nEmployee Name: "+arr[i].eName +"\nSalary: "+arr[i].eSalary);
+				System.out.println("\n\Employee with ID: " +searchKey+ " is found\nEmployee Name: "+arr[i].eName +"\nSalary: "+arr[i].eSalary);
 				return;			
 			}		
 			else{
-				System.out.println("Employee with ID: " +searchKey+ " is not found");				
+				System.out.println("\n\nEmployee with ID: " +searchKey+ " is not found");				
 			}
 		}
 
