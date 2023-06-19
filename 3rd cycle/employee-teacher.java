@@ -23,7 +23,7 @@ class EmployeeManager{
 	static void display(Teacher teacher){
 		System.out.print("\n\nTeacher INFO:\nEMP ID: "+teacher.empID+"\nSalary: "+teacher.salary+"\nName: "+teacher.name+"\nAddress: "+teacher.address+"\nDepartment: "+teacher.department+"\nSubjects taught: ");
 		for(int i=0;i<teacher.subjectCount;i++)
-			System.out.print(teacher.Subjects[i]);
+			System.out.print(teacher.Subjects[i]+" ");
 	}
 
 	static void search(Teacher teachers[],int searchID) {
@@ -48,22 +48,24 @@ class Employee{
 	String name,address;
 	Employee(){
 		Scanner read = new Scanner(System.in);
-		System.out.println("Enter employee info");
+		System.out.println("\nEnter employee info");
 		System.out.println("Employee ID: ");
 		this.empID = read.nextInt();
-		System.out.print("Salary: ");
+		System.out.println("Salary: ");
 		this.salary = read.nextDouble();
-		System.out.print("Name: ");
+		System.out.println("Name: ");
+		read.next();
 		this.name = read.nextLine();
-		System.out.print("Address: ");
+		System.out.println("Address: ");
 		this.address = read.nextLine();
 	}
 }
 
 class Teacher extends Employee{
-	String department,name,address;
-	int subjectCount,empID;
-	double salary;
+	String department;
+	int subjectCount;
+	String Subjects[];
+	
 	Scanner read = new Scanner(System.in);
 	Teacher(){
 		super();		
@@ -71,7 +73,7 @@ class Teacher extends Employee{
 		department = read.nextLine();
 		System.out.println("How many subjects does the teacher handle?");
 		this.subjectCount = read.nextInt();
-		String[] Subjects = new String[subjectCount];
+		Subjects = new String[subjectCount];
 		System.out.println("Enter the " +subjectCount+ " subject names");
 		for(int i=0;i<subjectCount;i++)			
 			Subjects[i] = read.next();
