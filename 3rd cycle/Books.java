@@ -4,27 +4,27 @@ class BooksManager {
     private static Scanner scanner = new Scanner(System.in);
 
     private static int count;
-    private static Literature[] literatureBooks;
-    private static Fiction[] fictionBooks;
-    private static int countLiterature, countFiction;
-    private static String publisher, bookname, author;
-    private static int publishedYear;
+    private static Literature[] lBooks;
+    private static Fiction[] fBooks;
+    private static int countL, countF;
+    private static String publisher, bName, author;
+    private static int pubYear;
     private static double price;
 
     public static void main(String args[]) {
         System.out.println("No of literature books to add: ");
-        countLiterature = scanner.nextInt();
-        literatureBooks = new Literature[countLiterature];
-        for (count = 0; count < countLiterature; count++) {
+        countL = scanner.nextInt();
+        lBooks = new Literature[countL];
+        for (count = 0; count < countL; count++) {
             read("Literature", count + 1);
-            literatureBooks[count] = new Literature(publisher, bookname, author, publishedYear, price);
+            lBooks[count] = new Literature(publisher, bName, author, pubYear, price);
         }
         System.out.println("No of fiction books to add: ");
-        countFiction = scanner.nextInt();
-        fictionBooks = new Fiction[countFiction];
-        for (count = 0; count < countFiction; count++) {
+        countF = scanner.nextInt();
+        fBooks = new Fiction[countF];
+        for (count = 0; count < countF; count++) {
             read("Fiction", count + 1);
-            fictionBooks[count] = new Fiction(publisher, bookname, author, publishedYear, price);
+            fBooks[count] = new Fiction(publisher, bName, author, pubYear, price);
         }
         display();
     }
@@ -35,11 +35,11 @@ class BooksManager {
         scanner.nextLine();
         publisher = scanner.nextLine();
         System.out.println("Book name: ");
-        bookname = scanner.nextLine();
+        bName = scanner.nextLine();
         System.out.println("Author: ");
         author = scanner.nextLine();
         System.out.println("Published Year: ");
-        publishedYear = scanner.nextInt();
+        pubYear = scanner.nextInt();
         System.out.println("Price: ");
         price = scanner.nextDouble();
     }
@@ -47,16 +47,16 @@ class BooksManager {
     static void display() {
         int i;
         System.out.println("Literature Books:\n");
-        for (i = 0; i < countLiterature; i++) {
+        for (i = 0; i < countL; i++) {
             System.out.printf("Book name: %s\nPublisher name: %s\nAuthor: %s\nYear: %d\nPrice: %,.2f\n\n",
-                    literatureBooks[i].bookName, literatureBooks[i].pubName, literatureBooks[i].author,
-                    literatureBooks[i].publishedYear, literatureBooks[i].price);
+                    lBooks[i].bName, lBooks[i].pubName, lBooks[i].author,
+                    lBooks[i].pubYear, lBooks[i].price);
         }
         System.out.println("\nFiction Books:\n");
-        for (i = 0; i < countFiction; i++) {
+        for (i = 0; i < countF; i++) {
             System.out.printf("Book name: %s\nPublisher name: %s\nAuthor: %s\nYear: %d\nPrice: %,.2f\n\n",
-                    fictionBooks[i].bookName, fictionBooks[i].pubName, fictionBooks[i].author,
-                    fictionBooks[i].publishedYear, fictionBooks[i].price);
+                    fBooks[i].bName, fBooks[i].pubName, fBooks[i].author,
+                    fBooks[i].pubYear, fBooks[i].price);
         }
     }
 }
@@ -70,27 +70,27 @@ class Publisher {
 }
 
 class Book extends Publisher {
-    String bookName, author;
-    int publishedYear;
+    String bName, author;
+    int pubYear;
     double price;
 
-    Book(String _pubName, String _bookName, String _author, int _publishedYear, double _price) {
+    Book(String _pubName, String _bNa, String _author, int _pubYear, double _price) {
         super(_pubName);
-        this.bookName = _bookName;
+        this.bName = _bNa;
         this.author = _author;
-        this.publishedYear = _publishedYear;
+        this.pubYear = _pubYear;
         this.price = _price;
     }
 }
 
 class Literature extends Book {
-    Literature(String _pubName, String _bookName, String _author, int _publishedYear, double _price) {
-        super(_pubName, _bookName, _author, _publishedYear, _price);
+    Literature(String _pubName, String _bNa, String _author, int _pubYear, double _price) {
+        super(_pubName, _bNa, _author, _pubYear, _price);
     }
 }
 
 class Fiction extends Book {
-    Fiction(String _pubName, String _bookName, String _author, int _publishedYear, double _price) {
-        super(_pubName, _bookName, _author, _publishedYear, _price);
+    Fiction(String _pubName, String _bNa, String _author, int _pubYear, double _price) {
+        super(_pubName, _bNa, _author, _pubYear, _price);
     }
 }
