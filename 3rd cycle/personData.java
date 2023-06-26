@@ -36,10 +36,7 @@ public class personData {
     }
 
     static void display(Teacher teacher) {
-        System.out.printf(
-                "Teacher info:\n\nName:%s\nGender: %s\nAge: %s\nEmployee ID: %d\nSalary: %f\nCompany name: %s\nQualification: %s\nTeacher id: %d\n: %s\nSubject: %s\nDepartment: %s\n",
-                teacher.name, teacher.gender, teacher.age, teacher.emp_id, teacher.salary, teacher.companyName,
-                teacher.qualification, teacher.teacherID, teacher.subject, teacher.department);
+        System.out.printf("Teacher info:\n\nName:%s\nGender: %s\nAge: %s\nEmployee ID: %d\nSalary: %f\nCompany name: %s\nQualification: %s\nTeacher id: %d\nSubject: %s\nDepartment: %s\n",teacher.name, teacher.gender, teacher.age, teacher.emp_id, teacher.salary,teacher.companyName, teacher.qualification, teacher.teacherID, teacher.subject, teacher.department);
     }
 }
 
@@ -48,7 +45,8 @@ class Person extends personData {
     int age;
 
     Person() {
-        System.out.println("Name: ");
+				System.out.println("Enter teacher info:\n");
+        System.out.println("\nName: ");
         scanner.next();
         name = scanner.nextLine();
         System.out.println("Gender: ");
@@ -87,8 +85,9 @@ class Teacher extends Employee {
         System.out.println("Teacher ID: ");
         teacherID = scanner.nextInt();
         System.out.println("Subject: ");
+				scanner.next();
         subject = scanner.nextLine();
         System.out.println("Department: ");
-        subject = scanner.nextLine();
+        department = scanner.nextLine();
     }
 }
